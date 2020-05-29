@@ -85,19 +85,19 @@ class DatabaseManager {
 
     getContactList(groupName) {
 
-            if (!groupName) {
-                throw new CustomError(400, "Group name must not be empty.")
-            }
+        if (!groupName) {
+            throw new CustomError(400, "Group name must not be empty.")
+        }
 
-            var uniqueGroupNames = this.getUniqueGroupNames()
-            if (!uniqueGroupNames.includes(groupName)) {
-                throw new CustomError(404, "Group name not exists.")
-            }
+        var uniqueGroupNames = this.getUniqueGroupNames()
+        if (!uniqueGroupNames.includes(groupName)) {
+            throw new CustomError(404, "Group name not exists.")
+        }
 
-            var contactList = this.dictionary.filter((row) => { return row.groupName == groupName && row.firstName }).map((row) => { return row.firstName })
-            return {
-                "contacts": contactList
-            }
+        var contactList = this.dictionary.filter((row) => { return row.groupName == groupName && row.firstName }).map((row) => { return row.firstName })
+        return {
+            "contacts": contactList
+        }
     }
 
     addContact(info = {}) {
@@ -191,7 +191,7 @@ class DatabaseManager {
                 row.imagePath = info.imagePath || ""
             }
         })
-        
+
         this.write()
         return { "message": `Contact is edited.` }
     }
