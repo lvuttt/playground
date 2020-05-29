@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const { CustomError } = require('../error')
+const { CustomError } = require('../helpers')
 
 class DatabaseManager {
     constructor(json_path) {
@@ -228,5 +228,5 @@ class DatabaseManager {
 
 }
 
-var databaseManager = new DatabaseManager("assignment2/contact.json")
+var databaseManager = new DatabaseManager("assignment2/database.json")
 module.exports = databaseManager

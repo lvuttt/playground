@@ -1,17 +1,21 @@
-// const contactNumByGroupName = (data) => {
-//     console.log(typeof(data))
-//     var groupName = data.map(function(row) {return row.groupName})
-//     var counter = {}
-//     groupName.forEach( function(name) { if (name in counter) counter[name] ++; else counter[name] = 1; } );
-//     return counter
-// }
+class CustomError extends Error {
+    constructor(statusCode, message) {
+        super();
+        this.statusCode = statusCode;
+        this.message = message;
+    }
+}
 
-// const deleteGroupName = (data, name) => {
-//     console.log(data)
-//     return data.filter(row => row.groupName != name)
-// }
+const handleError = (err, res) => {
+    const { statusCode, message } = err;
+    res.status(statusCode).json({
+        status: "error",
+        statusCode,
+        message
+    });
+};
 
-// module.exports = {
-//     "contactNumByGroupName": contactNumByGroupName,
-//     "deleteGroupName": deleteGroupName
-// }
+module.exports = {
+    "CustomError": CustomError,
+    "handleError": handleError,
+}
