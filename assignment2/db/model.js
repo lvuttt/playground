@@ -59,7 +59,7 @@ class DatabaseManager {
     addGroup(groupName) {
         var uniqueGroupNames = this.getUniqueGroupNames()
         if (groupName == "") {
-            throw new CustomError(400, "Group name must not be string.")
+            throw new CustomError(400, "Group name must not be empty.")
         }
 
         if (uniqueGroupNames.includes(groupName)) {
@@ -84,7 +84,6 @@ class DatabaseManager {
     }
 
     getContactList(groupName) {
-        try {
 
             if (!groupName) {
                 throw new CustomError(400, "Group name must not be empty.")
@@ -99,10 +98,6 @@ class DatabaseManager {
             return {
                 "contacts": contactList
             }
-
-        } catch (err) {
-            throw new CustomError(500, err)
-        }
     }
 
     addContact(info = {}) {
@@ -201,14 +196,13 @@ class DatabaseManager {
         return { "message": `Contact is edited.` }
     }
 
-
     getContactInfo(groupName, name) {
         var uniqueGroupNames = this.getUniqueGroupNames()
         if (!uniqueGroupNames.includes((groupName || ""))) {
             throw new CustomError(400, "Group name not exists.")
         }
 
-        if (name == "") {
+        if ((name || "") == "") {
             throw new CustomError(400, "First name must not be empty.")
         }
 
