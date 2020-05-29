@@ -5,6 +5,7 @@
         "birthDate": "",
         "phoneNum": "",
         "email": "",
-        "url": ""
+        "url": "",
+        "imagePath": ""
     }
 ]

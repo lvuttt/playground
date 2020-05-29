@@ -25,20 +25,7 @@ app.post('/mail/send', function (req, res) {
   })
 });
 
-const sendEmail = function (mailOptionsObject) {
 
-  const msg = {
-    to: mailOptionsObject.to,
-    from: mailOptionsObject.from,
-    subject: mailOptionsObject.subject,
-    text: mailOptionsObject.text
-  };
-
-  const status = sgMail.send(msg)
-
-  return status;
-
-};
 
 app.listen(port, () => {
   console.log(`Assignment2 app listening at http://localhost:${port}`)

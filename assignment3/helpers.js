@@ -10,8 +10,8 @@ const calculateTax = (income) => {
   }
 }
 
-function isNumeric(x) {
-  return parseFloat(x).toString() === x.toString();
+const isNumeric = (string) => {
+  return parseFloat(string).toString() === string;
 }
 
 module.exports = {
