@@ -46,7 +46,7 @@ class DatabaseManager {
     deleteGroup(groupName) {
         var uniqueGroupNames = this.getUniqueGroupNames()
         if (!uniqueGroupNames.includes(groupName)) {
-            throw new CustomError(404, "Group name not exists")
+            throw new CustomError(404, "Group name not exists.")
         }
 
         this.dictionary = this.dictionary.filter((row) => { return row.groupName != groupName })
@@ -58,9 +58,14 @@ class DatabaseManager {
 
     addGroup(groupName) {
         var uniqueGroupNames = this.getUniqueGroupNames()
-        if (uniqueGroupNames.includes(groupName)) {
-            throw new CustomError(404, "Group name already exists")
+        if (groupName == "") {
+            throw new CustomError(400, "Group name must not be string.")
         }
+
+        if (uniqueGroupNames.includes(groupName)) {
+            throw new CustomError(404, "Group name already exists.")
+        }
+
 
         var data = {
             "groupName": groupName,
@@ -103,20 +108,20 @@ class DatabaseManager {
     addContact(info = {}) {
         var uniqueGroupNames = this.getUniqueGroupNames()
         if (!uniqueGroupNames.includes(info.groupName || "")) {
-            throw new CustomError(400, "Group must be created first")
+            throw new CustomError(400, "Group must be created first.")
         }
 
         if ((info.groupName || "") == "") {
-            throw new CustomError(400, "Group name must not be empty")
+            throw new CustomError(400, "Group name must not be empty.")
         }
 
         if ((info.firstName || "") == "") {
-            throw new CustomError(400, "First name must not be empty")
+            throw new CustomError(400, "First name must not be empty.")
         }
 
         var filteredData = this.dictionary.filter((row) => { return row.groupName == info.groupName && row.firstName == info.firstName })
         if (filteredData.length != 0) {
-            throw new CustomError(400, "First name already exists")
+            throw new CustomError(400, "First name already exists.")
         }
 
 
@@ -142,12 +147,12 @@ class DatabaseManager {
         }
 
         if ((name || "") == "") {
-            throw new CustomError(400, "First name must not be empty")
+            throw new CustomError(400, "First name must not be empty.")
         }
 
         var filteredData = this.dictionary.filter((row) => { return row.groupName == groupName && row.firstName == name })
         if (filteredData.length == 0) {
-            throw new CustomError(404, "First name not exists")
+            throw new CustomError(404, "First name not exists.")
         }
 
         this.dictionary = this.dictionary.filter((row) => { return row.groupName != groupName && row.firstName != name })
@@ -164,7 +169,7 @@ class DatabaseManager {
         }
 
         if ((info.firstName || "") == "") {
-            throw new CustomError(400, "First name must not be empty")
+            throw new CustomError(400, "First name must not be empty.")
         }
 
         var filteredData = this.dictionary.filter((row) => { return row.groupName == info.groupName && row.firstName == info.firstName })
@@ -173,7 +178,7 @@ class DatabaseManager {
         }
 
         if ((info.newFirstName || "") == "") {
-            throw new CustomError(400, "Edited first name must not be empty")
+            throw new CustomError(400, "Edited first name must not be empty.")
         }
 
         var names = this.getContactList(info.groupName).contacts
@@ -203,16 +208,16 @@ class DatabaseManager {
             throw new CustomError(400, "Group name not exists.")
         }
 
-        if ((name || "") == "") {
-            throw new CustomError(400, "First name must not be empty")
+        if (name == "") {
+            throw new CustomError(400, "First name must not be empty.")
         }
 
         var filteredData = this.dictionary.filter((row) => { return row.groupName == groupName && row.firstName == name })
         if (filteredData.length == 0) {
-            throw new CustomError(400, "First name not exists")
+            throw new CustomError(400, "First name not exists.")
         }
         if (filteredData.length >= 2) {
-            throw new CustomError(500, "Data is duplicated")
+            throw new CustomError(500, "Data is duplicated.")
         }
         return filteredData[0]
     }
