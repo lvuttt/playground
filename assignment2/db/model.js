@@ -38,9 +38,13 @@ class DatabaseManager {
         var groupNames = filteredData.map(function (row) { return row.groupName })
         groupNames.forEach(function (name) { counter[name]++ });
 
-        return {
-            "groups": counter
+        var groups = []
+        for (const [groupName, contactNum] of Object.entries(counter)) {
+            groups.push({
+                "groupName": groupName, "contactNum": contactNum
+            })
         }
+        return groups
     }
 
     deleteGroup(groupName) {
