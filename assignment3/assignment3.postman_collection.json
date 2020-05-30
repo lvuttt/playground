@@ -1,0 +1,22 @@
+{
+	"info": {
+		"_postman_id": "c592bc25-d2e3-4e92-8c99-04b93b338c4f",
+		"name": "assignment3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "calculate-tax",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "calculate tax without tax deduction"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

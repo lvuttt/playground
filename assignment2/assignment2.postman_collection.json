@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "97344f85-27e5-444b-a080-374c19cf501d",
+		"name": "assignment2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get group info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/group-management/info",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"group-management",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add group",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupName\": \"aa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/group-management/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"group-management",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete group",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupName\": \"aa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/group-management/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"group-management",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get contact name of group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupName\": \"aa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/group-management/contact-list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"group-management",
+						"contact-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete contact",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupName\": \"aa\",\n\t\"firstName\": \"nut\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/contact-management/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact-management",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupName\": \"aa\",\n\t\"firstName\": \"nut\",\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/contact-management/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact-management",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupName\": \"aa\",\n\t\"firstName\": \"nut\",\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/contact-management/edit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact-management",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get contact information",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"groupName\": \"aa\",\n\t\"firstName\": \"nut\",\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/contact/info",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"info"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

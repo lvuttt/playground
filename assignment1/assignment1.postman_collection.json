@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "149fb453-96e7-4a37-a9be-876f51404877",
+		"name": "assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "send-mail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to\": \"lvutza5chod@hotmail.com\",\n    \"from\": \"nuttawat.yoodee@gmail.com\",\n    \"message\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/mail/send",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"mail",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

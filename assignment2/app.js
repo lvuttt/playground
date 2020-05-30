@@ -1,10 +1,10 @@
-// call the packages we need
-const express = require('express');  // call express
 const bodyParser = require('body-parser')
+const express = require('express')
+const dbm = require('./db/model')
 const { handleError } = require('./helpers')
 const app = express()
-const port = process.env.PORT || 3000;
-const dbm = require('./db/model')
+const port = process.env.PORT || 3000
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -37,7 +37,7 @@ app.post('/contact/info', (req, res) => {
 
 app.use((err, req, res, next) => {
   handleError(err, res);
-});
+})
 
 app.listen(port, () => {
   console.log(`Assignment2 app listening at http://localhost:${port}`)

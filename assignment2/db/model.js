@@ -37,7 +37,7 @@ class DatabaseManager {
         var filteredData = this.dictionary.filter((row) => { return row.firstName })
         var groupNames = filteredData.map(function (row) { return row.groupName })
         groupNames.forEach(function (name) { counter[name]++ });
-
+        
         return {
             "groups": counter
         }
@@ -150,10 +150,10 @@ class DatabaseManager {
             throw new CustomError(404, "First name not exists.")
         }
 
-        this.dictionary = this.dictionary.filter((row) => { return row.groupName != groupName && row.firstName != name })
+        this.dictionary = this.dictionary.filter((row) => { return row.groupName != groupName || row.firstName != name })
         this.write()
         return {
-            "message": `Contact(${info.firstName}) is deleted.`
+            "message": `Contact(${name}) is deleted.`
         }
     }
 

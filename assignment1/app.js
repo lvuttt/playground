@@ -1,6 +1,5 @@
-// call the packages we need
-const express = require('express');  // call express
 const bodyParser = require('body-parser')
+const express = require('express');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 

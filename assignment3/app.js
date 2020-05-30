@@ -1,6 +1,5 @@
-// call the packages we need
-const express = require('express');  // call express
 const bodyParser = require('body-parser')
+const express = require('express');
 const { calculateTax, isNumeric } = require('./helpers')
 const app = express()
 const port = process.env.PORT || 3000;
@@ -21,7 +20,6 @@ app.get('/tax/calculate/:income', function (req, res) {
     "message": "income must be a number which is more than equal 0",
   })
 })
-
 
 app.listen(port, () => {
   console.log(`Assignment3 app listening at http://localhost:${port}`)
