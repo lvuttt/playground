@@ -1,4 +1,4 @@
-const {CustomError, handleError} = require('./error')
+const { CustomError, handleError } = require('./error')
 
 module.exports = {
     "CustomError": CustomError,

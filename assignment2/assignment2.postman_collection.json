@@ -178,7 +178,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"groupName\": \"aa\",\n\t\"firstName\": \"nut\",\n}",
+					"raw": "{\n\t\"groupName\": \"ha\",\n\t\"firstName\": \"lvuttt\",\n    \"birthDate\": \"\",\n    \"phoneNum\": \"\",\n    \"email\": \"\",\n    \"url\":  \"\",\n    \"imagePath\": \"\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -213,7 +213,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"groupName\": \"aa\",\n\t\"firstName\": \"nut\",\n}",
+					"raw": "{\n\t\"groupName\": \"ha\",\n\t\"firstName\": \"lvuttt\",\n\t\"newFirstName\": \"nutza\",\n    \"birthDate\": \"\",\n    \"phoneNum\": \"\",\n    \"email\": \"\",\n    \"url\":  \"\",\n    \"imagePath\": \"\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

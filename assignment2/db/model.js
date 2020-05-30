@@ -37,7 +37,7 @@ class DatabaseManager {
         var filteredData = this.dictionary.filter((row) => { return row.firstName })
         var groupNames = filteredData.map(function (row) { return row.groupName })
         groupNames.forEach(function (name) { counter[name]++ });
-        
+
         return {
             "groups": counter
         }

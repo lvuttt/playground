@@ -9,14 +9,15 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/tax/calculate/:income', function (req, res) {
   var income = req.params.income
+
   if (isNumeric(income) && parseFloat(income) >= 0) {
     income = parseFloat(income)
     return res.json({
       "tax": calculateTax(income),
     })
   }
-  res.status(400)
-  return res.json({
+
+  return res.status(400).json({
     "message": "income must be a number which is more than equal 0",
   })
 })
