@@ -15,15 +15,8 @@ class DatabaseManager {
     }
 
     write() {
-        var jsonContent = JSON.stringify(this.dictionary);
-
-        fs.writeFile(this.json_path, jsonContent, 'utf8', function (err) {
-            if (err) {
-                console.log("An error occured while writing JSON Object to File.");
-                throw new CustomError(500, err)
-            }
-            console.log("JSON file has been updated.");
-        });
+        var jsonContent = JSON.stringify(this.dictionary)
+        fs.writeFileSync(this.json_path, jsonContent, 'utf8')
     }
 
     countGroup() {
